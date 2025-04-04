@@ -1,3 +1,4 @@
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -6,12 +7,15 @@ plugins {
     id 'kotlin-parcelize'
 }
 
+ext.compose_ui_version = '1.4.0' // Definición de la versión de Compose
+
+
 android {
-    namespace 'com.nameisjayant.noteapp'
+    namespace 'com.rogerjack.noteapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.nameisjayant.noteapp"
+        applicationId "com.rogerjack.noteapp"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -30,17 +34,22 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
+    }
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)  // Asegúrate de que esté configurado a 17
+        }
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.3.2'
+        kotlinCompilerExtensionVersion '1.4.0'
     }
     packagingOptions {
         resources {
@@ -51,12 +60,15 @@ android {
 }
 
 dependencies {
-
+    //implementation "androidx.compose.ui:ui:1.4.0" // Usa la última versión
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
     implementation 'androidx.activity:activity-compose:1.6.1'
+    //implementation "androidx.compose.ui:ui:$compose_ui_version"
+    //implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
     implementation "androidx.compose.ui:ui:$compose_ui_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
+
     implementation 'androidx.compose.material:material:1.3.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

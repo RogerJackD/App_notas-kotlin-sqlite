@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">note app</string>
-    <string name="enter_title">Enter title</string>
-    <string name="write_task">Write note here..</string>
-    <string name="add_task">Add Note</string>
-    <string name="delete">Delete</string>
-    <string name="edit">Edit</string>
-    <string name="all_notes">All Notes</string>
-    <string name="edit_note">Edit Note</string>
+    <string name="enter_title">Ingresa Titulo</string>
+    <string name="write_task">Escribe una tarea</string>
+    <string name="add_task">Agregar Nota</string>
+    <string name="delete">Borrar</string>
+    <string name="edit">Editar</string>
+    <string name="all_notes">Todas tus notas</string>
+    <string name="edit_note">Editar nota</string>
 </resources>
